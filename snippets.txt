@@ -1,1 +1,4 @@
 remember first open ios emulator than can run npm run ios !!
+
+git config --global user.name "Tetsumote"
+git config --global user.email "unionproject88@gmail.com"
