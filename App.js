@@ -1,6 +1,8 @@
 import styled from 'styled-components';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Platform } from 'react-native';
+
+import Example1 from './example1';
+import Row from './Row';
+import Grid from './Grid';
 
 const Box = styled.View`
   width:100px;
@@ -9,7 +11,7 @@ const Box = styled.View`
   align-items:center;
   background-color:lightgray
 `;
-
+ 
 const BoxText =  styled.Text`
   color:darkslategray;
   font-weight:bold
@@ -17,41 +19,7 @@ const BoxText =  styled.Text`
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={styles.box}>
-        <Text style={styles.boxText}>I'm in a box</Text>
-      </View>
-      <Box>
-        <BoxText>I'm in a box</BoxText>
-      </Box>
-      <StatusBar style="auto" />
-    </View>
+    <Row />
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'ghostwhite',
-    alignItems: 'center',
-    justifyContent: 'center',
-    ...Platform.select({
-      ios:{paddingTop:20},
-      android:{ paddingTop: StatusBar.currentHeight }
-    })
-  },
-  text:{
-    fontWeight:"bold",
-  },
-  box:{
-    width:100,
-    height:100,
-    justifyContent:"center",
-    alignItems:"center",
-    backgroundColor:'lightgray',
-  },
-  boxText:{
-    color:"darkslategray",
-    fontWeight:"bold"
-  }
-});
